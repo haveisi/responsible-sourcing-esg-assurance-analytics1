@@ -61,3 +61,100 @@ Power BI star schema
 Executive assurance summary
 Control & exception management
 Supplier risk & assurance decision
+```
+
+## Key Results
+
+| Metric | Result |
+|---|---:|
+| Source records | 100 |
+| Unique transaction IDs | 98 |
+| Suppliers assessed | 20 |
+| Reporting eligible records | 15 |
+| Review records | 25 |
+| Hold records | 60 |
+| Reporting eligibility rate | 15% |
+| Control tests | 600 |
+| Open exceptions | 85 |
+| High-severity open exceptions | 67 |
+| Overall assurance readiness | PARTIALLY READY |
+
+## Key Data-Quality Finding
+
+The source contained 100 physical records but only 98 unique business transaction IDs.
+
+Two transaction IDs were reused across otherwise distinct source records.
+
+Rather than deleting those records, the pipeline:
+
+1. preserved all 100 source records,
+2. created a unique technical `source_record_id`,
+3. retained `transaction_id` as a business identifier,
+4. treated transaction-ID uniqueness as a data-quality control issue.
+
+This prevents a business-key quality problem from becoming a pipeline duplication problem.
+
+## Data Governance Framework
+
+The project follows a simple governance sequence:
+
+**Define → Own → Source → Check → Trace → Approve**
+
+The workflow distinguishes among:
+
+- data ownership
+- data stewardship
+- technical custody
+- data production
+- data-quality validation
+- evidence requirements
+- reporting approval
+
+## Assurance Readiness Logic
+
+A control failure does not automatically mean a confirmed ESG misstatement.
+
+The reporting gate applies this logic:
+
+- unresolved material issue → `HOLD`
+- unresolved review item → `REVIEW`
+- required controls satisfied → `ELIGIBLE`
+
+The project therefore separates:
+
+1. data-quality exceptions,
+2. control failures,
+3. evidence gaps,
+4. reporting eligibility,
+5. assurance readiness.
+
+## Geographic Risk Interpretation
+
+Geographic risk indicators are used as due-diligence context.
+
+They do not establish supplier causation, wrongdoing, or direct responsibility for deforestation.
+
+Synthetic farm points are used only to demonstrate the geospatial workflow.
+
+## Technology Stack
+
+- Databricks
+- Delta Lake
+- SQL
+- Python / pandas
+- Power BI / DAX
+- QGIS
+- Excel
+
+## Dashboard Pages
+
+1. **ESG Assurance Readiness — Executive Summary**
+2. **Control Performance & Exception Management**
+3. **Supplier Risk & Assurance Decision**
+```
+
+Use commit message:
+
+`Expand project README with methodology and results`
+
+Do this first. After you commit it, say **go**, and the next step will be uploading the three Power BI screenshots into `dashboards/` and embedding them in the README.
