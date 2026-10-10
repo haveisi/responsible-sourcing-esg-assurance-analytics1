@@ -351,6 +351,21 @@ Control outcomes include:
 - `N/A`
 
 ---
+## Geospatial Responsible-Sourcing Analysis
+
+QGIS is used to connect synthetic supplier and farm records with real Brazilian municipalities and public deforestation-risk indicators.
+
+The geospatial workflow supports:
+
+- municipality validation
+- supplier/farm geographic linkage
+- municipality-level soy deforestation exposure
+- MapBiomas alert context
+- due-diligence prioritization
+
+![Brazil Municipality Risk](qgis/qgis_brazil_municipality_risk.png)
+
+Geographic risk is interpreted as landscape-level due-diligence context and does not establish supplier causation or wrongdoing.
 
 ## Exception Management
 
