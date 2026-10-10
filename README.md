@@ -152,9 +152,3 @@ Synthetic farm points are used only to demonstrate the geospatial workflow.
 2. **Control Performance & Exception Management**
 3. **Supplier Risk & Assurance Decision**
 ```
-
-Use commit message:
-
-`Expand project README with methodology and results`
-
-Do this first. After you commit it, say **go**, and the next step will be uploading the three Power BI screenshots into `dashboards/` and embedding them in the README.
